@@ -36,25 +36,25 @@ export const RecipePage = ({ item, setItem }) => {
   const Diet = () => {
       return (
           <ul>
-            {recipe.dietLabels.map((item) => (
-                <li key={recipe.label} style={{listStyle: "none",}} > 
-                {item}
-                </li>
-                ))}
-          </ul>
+        {item.dietLabels.map((item) => (
+          <li key={item.label} style={{ listStyle: "none" }}>
+            {item}
+          </li>
+        ))}
+      </ul>
           );
   };
 
  const Cautions = () => {
       return (
-          <ul>
-            {recipe.cautions.map((item) => (
-                <li key={recipe.label} style={{listStyle: "none",}} > 
-                {item}
-                </li>
-                ))}
-          </ul>
-          );
+      <ul>
+        {item.cautions.map((item) => (
+          <li key={item.label} style={{ listStyle: "none" }}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    );
   };
 
   const energy = item.totalNutrients.ENERC_KCAL.quantity;
