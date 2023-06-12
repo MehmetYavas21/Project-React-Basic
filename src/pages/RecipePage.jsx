@@ -131,8 +131,9 @@ export const RecipePage = ({ item, setItem }) => {
             rounded="lg"
             mr="5"
           >
-            {item.healthLabels.map((healthLab) => (
-              <Text
+            {item.healthLabels.map((healthLab) => {
+              return (
+                <Text
                 columns={{ sm: 1, md: 2 }}
                 key={item.label}
                 bg="purple.100"
@@ -141,7 +142,9 @@ export const RecipePage = ({ item, setItem }) => {
               >
                 {healthLab}
               </Text>
-            ))}
+              )
+            })
+          }
           </SimpleGrid>
           {item.dietLabels != "" && (
             <Box>
