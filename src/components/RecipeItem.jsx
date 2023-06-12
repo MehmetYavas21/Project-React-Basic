@@ -5,16 +5,16 @@ export const RecipeItem = ({ recipe, setItem }) => {
   const VeganAndVegetarian = () => {
     return (
       <ul>
-        recipe.healthLabels.map((item) => {
+        {recipe.healthLabels.map((item) => {
           if (item == "Vegetarian" || item == "Vegan") {
             return (
-              <li key={recipe.label} style={{listStyle: "none",}} >
+              <li key={recipe.label} style={{ listStyle: "none" }}>
                 {item}{" "}
               </li>
-          )
-        }
-        };)
-       </ul>
+            );
+          }
+        })}
+      </ul>
     );
   };
 
