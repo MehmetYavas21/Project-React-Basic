@@ -1,50 +1,45 @@
 import { Box, Image, Text, Center, List } from "@chakra-ui/react";
 
 export const RecipeItem = ({ recipe, setItem }) => {
+  
   const VeganAndVegetarian = () => {
-    return recipe.healthLabels.map((item) => {
-      if (item == "Vegetarian" || item == "Vegan") {
-        return (
-          <ul
-            key={recipe.label}
-            style={{
-              listStyle: "none",
-            }}
-          >
-            {item}{" "}
-          </ul>
-        );
-      }
-    });
+    return (
+      <ul>
+        recipe.healthLabels.map((item) => {
+          if (item == "Vegetarian" || item == "Vegan") {
+            return (
+              <li key={recipe.label} style={{listStyle: "none",}} >
+                {item}{" "}
+              </li>
+          )
+        }
+        };)
+       </ul>
+    );
   };
 
-  const Diet = () => {
-    return recipe.dietLabels.map((item) => {
+ const Diet = () => {
       return (
-        <ul
-          key={recipe.label}
-          style={{
-            listStyle: "none",
-          }}
-        >
-          {item}{" "}
-        </ul>
-      );
-    });
+          <ul>
+            {recipe.dietLabels.map((item) => (
+                <li key={recipe.label} style={{listStyle: "none",}} > 
+                {item}
+                </li>
+                ))}
+          </ul>
+          );
   };
+
   const Cautions = () => {
-    return recipe.cautions.map((item) => {
-      return (
-        <ul
-          key={recipe.label}
-          style={{
-            listStyle: "none",
-          }}
-        >
-          {item}
-        </ul>
-      );
-    });
+     return (
+          <ul>
+            {recipe.cautions.map((item) => (
+                <li key={recipe.label} style={{listStyle: "none",}} > 
+                {item}
+                </li>
+                ))}
+          </ul>
+          );
   };
 
   return (
