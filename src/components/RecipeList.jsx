@@ -1,6 +1,8 @@
 import { Center, SimpleGrid, GridItem } from "@chakra-ui/react";
 import { RecipeItem } from "./RecipeItem";
 
+// check the following line, it seems to be unnecessary "{recipes.map((recipe) => ("
+
 export const RecipeList = ({ recipes, setItem }) => {
   return (
     <>
