@@ -11,9 +11,11 @@ import { Button } from "../components/ui/Button";
 import { data } from "../utils/data";
 
 export const RecipePage = ({ item, setItem }) => {
+  
   const goBack = () => {
     setItem("");
   };
+  
   const handleChage = (recipe) => {
     const selectedItem = data.hits.filter((item) => {
       return item.recipe.label == recipe.target.value;
@@ -32,33 +34,27 @@ export const RecipePage = ({ item, setItem }) => {
   };
 
   const Diet = () => {
-    return item.dietLabels.map((recip) => {
       return (
-        <li
-          key={recip.label}
-          style={{
-            listStyle: "none",
-          }}
-        >
-          {recip}{" "}
-        </li>
-      );
-    });
+          <ul>
+            {recipe.dietLabels.map((item) => (
+                <li key={recipe.label} style={{listStyle: "none",}} > 
+                {item}
+                </li>
+                ))}
+          </ul>
+          );
   };
 
-  const Cautions = () => {
-    return item.cautions.map((recip) => {
+ const Cautions = () => {
       return (
-        <li
-          key={recip.label}
-          style={{
-            listStyle: "none",
-          }}
-        >
-          {recip}
-        </li>
-      );
-    });
+          <ul>
+            {recipe.cautions.map((item) => (
+                <li key={recipe.label} style={{listStyle: "none",}} > 
+                {item}
+                </li>
+                ))}
+          </ul>
+          );
   };
 
   const energy = item.totalNutrients.ENERC_KCAL.quantity;
