@@ -15,15 +15,22 @@ export const RecipeList = ({ recipes, setItem }) => {
           minH="80vh"
           pb="20"
         >
-          {recipes.map((recipe) => (
-            <>
-              <GridItem width="auto" colSpan="1">
-                <RecipeItem recipe={recipe} setItem={setItem} />
-              </GridItem>
-            </>
-          ))}
+          {recipes.map((recipe) => {
+            return (
+              <>
+                <GridItem width="auto" colSpan="1">
+                  <RecipeItem recipe={recipe} setItem={setItem} />
+                </GridItem>
+              </>
+            )
+          })}
         </SimpleGrid>
       </Center>
     </>
   );
 };
+
+
+(
+            
+          )
