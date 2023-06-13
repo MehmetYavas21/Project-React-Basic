@@ -9,7 +9,7 @@ export const RecipeItem = ({ recipe, setItem }) => {
           if (item == "Vegetarian" || item == "Vegan") {
             return (
               <li key={recipe.label} style={{ listStyle: "none" }}>
-                {item}{" "}
+                {item}{" "}<hr />
               </li>
             );
           }
@@ -23,7 +23,7 @@ export const RecipeItem = ({ recipe, setItem }) => {
           <ul>
             {recipe.dietLabels.map((item) => (
                 <li key={recipe.label} style={{listStyle: "none",}} > 
-                {item}
+                {item}<hr />
                 </li>
                 ))}
           </ul>
@@ -35,7 +35,7 @@ export const RecipeItem = ({ recipe, setItem }) => {
           <ul>
             {recipe.cautions.map((item) => (
                 <li key={recipe.label} style={{listStyle: "none",}} > 
-                {item}
+                {item}<hr />
                 </li>
                 ))}
           </ul>
