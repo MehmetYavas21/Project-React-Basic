@@ -38,7 +38,7 @@ export const RecipePage = ({ item, setItem }) => {
           <ul>
         {item.dietLabels.map((item) => (
           <li key={item.label} style={{ listStyle: "none" }}>
-            {item}
+            {item}<hr />
           </li>
         ))}
       </ul>
@@ -50,7 +50,7 @@ export const RecipePage = ({ item, setItem }) => {
       <ul>
         {item.cautions.map((item) => (
           <li key={item.label} style={{ listStyle: "none" }}>
-            {item}
+            {item}<hr />
           </li>
         ))}
       </ul>
@@ -75,7 +75,7 @@ export const RecipePage = ({ item, setItem }) => {
       display="flex"
       flexDir={"column"}
       gap={4}
-      background="white"
+      background="gray.100"
       width={["sm", "md", "lg", "xl"]}
       w="90%"
       p="5"
