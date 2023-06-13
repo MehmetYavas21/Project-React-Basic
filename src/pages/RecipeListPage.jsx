@@ -70,11 +70,7 @@ export const RecipeListPage = ({ clickFn, setItem }) => {
           <RecipeList
             recipes={matchedRecipes}
             clickFn={clickFn}
-            setItem={setItem}
-
-            // display="flex"
-            // flexDirection="column"
-            // alignSelf="center"
+            setItem={setItem}            
           />
         )}
       </Center>
