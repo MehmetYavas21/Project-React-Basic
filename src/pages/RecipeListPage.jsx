@@ -24,16 +24,14 @@ export const RecipeListPage = ({ clickFn, setItem }) => {
   const handleChange = (event) => {
     setSearchField(event.target.value);
     const matchedRecipes = recipes.filter((recipe) => {
-      // return recipe.label.toLowerCase().includes(searchField.toLowerCase());
       const label = recipe.label
         .toLowerCase()
         .includes(searchField.toLowerCase());
-      // the following code filter the recipes for healthlabels, but not just vegan und vegetarian !!!
-      // const health = recipe.healthLabels.filter((item) => {
-      //   return item.toLowerCase().includes(searchField.toLowerCase());
-      // });
+      const health = recipe.healthLabels.filter((item) => {
+        return item.toLowerCase().includes(searchField.toLowerCase());
+      });
 
-      return label; //|| (health.length > 0 ?? true);
+      return label || (health.length > 0 ?? true);
     });
     setMatchedRecipes(matchedRecipes);
   };
